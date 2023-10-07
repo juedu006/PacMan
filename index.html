@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacman</title>
+</head>
+<body>
+    
+    <div id="wrapper">
+        <button onclick="newGame()">Novo Jogo</button>
+        <canvas id="canvas"></canvas>
+        <p id="score" class="conteudo">
+            <span>Bolinhas Comidas: </span><span id="scoreEl">0</span>
+        </p>
+        <p id="vidas">
+            <span>Vidas Restantes: </span><span id="vidaEl">3</span>
+        </p>
+        <p id="timer">
+            <span>Tempo: </span><span id="tempoEl">0</span><span>s</span>
+        </p>
+    </div>
+</body>
+</html>
+<script src="index.js"></script>

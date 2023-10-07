@@ -1,0 +1,37 @@
+body{
+    margin: 0;
+    background-color: black;
+    padding: 10px 20px;
+  }
+h1, button{
+    color: #ffffff;
+    margin-left: 45%;
+    margin-bottom: -1px;
+}
+button{
+    width:113px;
+    color: black;
+}
+#wrapper{
+    border: 5px solid white;
+    height: 100%;
+    width: 100%;
+}
+#score, #vidas, #timer{
+    color:#ffffff;
+    float: right;
+    margin-top: -36%;
+    margin-right: 7%;
+    font-weight: bold;
+}
+#vidas{
+    margin-top: -30%;
+}
+#timer{
+    margin-top: -24%;
+}
+#canvas{
+    border: 5px solid yellow;
+    border-style: dashed;
+    margin: 1% 50% 2% 1%;
+}
