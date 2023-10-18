@@ -1,24 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perdeu kk</title>
+    <link rel="stylesheet" href="./CSS/estilo.css">
+    <link rel="icon" href="./imgs/james.png">
+    <title>Resultado</title>
 </head>
 <body>
-    
-    <div id="wrapper">
-        <h1> Perdeu kk </h1>
-        <button onclick="pagIni()">Novo Jogo</button>
-        <canvas id="canvas"></canvas>
-        
+    <div class="grandContainerResultado">
+        <div class="containerResultado">
+            <div class="containerGameOver">
+                <span class="txtGameOver">Game Over</span>
+            </div>
+            <div class="notaFinal">
+                <h3>Nota Final</h3>
+            </div>
+            <div class="nota">
+                <p class="txtNota">I</p>
+            </div>
+            <div class="botoesResultado">
+                <div class="containerBotaoResultado1">
+                    <a href="./index.html"><button type="button" class="botaoInicio">Inicio</button></a>
+                </div>
+                <div class="containerBotaoResultado2">
+                    <a href="./final.html"><button type="button" class="botaoJogarNovamente">Jogar <br> Novamente</button></a>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
-<script>
-        function pagIni(){
-            window.open("index.html")
-        }
-</script>
 </html>
-<script src="index.js"></script>

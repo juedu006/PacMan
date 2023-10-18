@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0;
+    background-color: black;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+
+#wrapper{
+    height: 100%;
+    width: 90%;
+    border: 3px solid yellow;
+    border-style: dashed;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2%;
+    padding:2%
+}
+#informacao{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 2%;
+}
+#score, #vidas, #timer{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:#ffffff;
+    float: right;
+    font-weight: bold;
+}
+#vidas{
+}
+#timer{
+}
+#canvas{
+    border: 6px solid yellow;
+    border-style: dashed;
+    margin: 1% 0% 1% 0%;  
+    /*background-color: blueviolet; */
+}
