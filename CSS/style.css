@@ -15,6 +15,7 @@ body{
 #wrapper{
     height: 100%;
     width: 90%;
+<<<<<<< HEAD
     border: 3px dashed yellow;
     display: flex;
     align-items: center;
@@ -30,12 +31,29 @@ body{
     margin-top: 2%;
 }
 
+=======
+    border: 3px solid yellow;
+    border-style: dashed;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2%;
+    padding:2%
+}
+#informacao{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 2%;
+}
+>>>>>>> 36e6ca5126d6dae6a053f3b4b115e36aed127406
 #score, #vidas, #timer{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color:#ffffff;
     float: right;
     font-weight: bold;
 }
+<<<<<<< HEAD
 
 #canvas{
     border: 6px dashed yellow;
@@ -55,4 +73,15 @@ body{
 
 .containerVida, .containerTempo{
     margin-left: 25em;
+=======
+#vidas{
+}
+#timer{
+}
+#canvas{
+    border: 6px solid yellow;
+    border-style: dashed;
+    margin: 1% 0% 1% 0%;  
+    /*background-color: blueviolet; */
+>>>>>>> 36e6ca5126d6dae6a053f3b4b115e36aed127406
 }
