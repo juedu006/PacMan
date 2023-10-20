@@ -5,8 +5,8 @@ const scoreEl = document.querySelector('#scoreEl')
 const vidaEl = document.querySelector('#vidaEl')
 const tempoEl = document.querySelector('#tempoEl')
 
-canvas.width = innerWidth/1.32
-canvas.height = innerHeight/1.2
+canvas.width = innerWidth/1.23
+canvas.height = innerHeight/1.38
 
 function newGame(){
     var vidas = 3
@@ -22,12 +22,12 @@ function newGame(){
     const tempoInterval = setInterval(tempoSec, 1000)
     
     class Boundary{
-        static width = 40
-        static height = 40
+        static width = 50
+        static height = 50
         constructor({position}){
             this.position = position
-            this.width= 40
-            this.height= 40
+            this.width= 50
+            this.height= 50
         }
         draw(){
             c.fillStyle='blue'
@@ -35,13 +35,15 @@ function newGame(){
         }
     }
 
+
+
     class Player{
         constructor({position, velocity, imageSrc}){
             this.position = position
             this.velocity = velocity
             this.image = new Image();
             this.image.src = imageSrc;
-            this.radius = 17
+            this.radius = 22
         }
         draw(){
             // c.beginPath()
@@ -64,7 +66,7 @@ function newGame(){
             this.position = position
             this.velocity = velocity
             this.speed = 2
-            this.radius = 17
+            this.radius = 27
             this.color = color 
             this.prevCollisions=[]
             this.scared = false 
@@ -97,7 +99,7 @@ function newGame(){
     class Pellet{
         constructor({position, imageSrc}){
             this.position = position
-            this.radius = 9
+            this.radius = 10
             this.image = new Image();
             this.image.src = imageSrc;
         }
@@ -115,7 +117,7 @@ function newGame(){
     class Cereja{
         constructor({position, imageSrc}){
             this.position = position
-            this.radius = 10
+            this.radius = 13
             this.image = new Image();
             this.image.src = imageSrc;
         }
@@ -133,7 +135,7 @@ function newGame(){
     class PowerUp{
         constructor({position, imageSrc}){
             this.position = position
-            this.radius = 17
+            this.radius = 15
             this.image = new Image();
             this.image.src = imageSrc;
         }
@@ -151,7 +153,7 @@ function newGame(){
     const map=[
         
         ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-'],
-        ['-', '.', '.', '.', '.', '.', '.', '.', '.', '.', '-', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', 'M', '-'],
+        ['-', ' ', '.', '.', '.', '.', '.', '.', '.', '.', '-', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', 'M', '-'],
         ['-', '.', '-', '-', '.', '-', '.', '-', '-', '.', '-', '.', '-', '.', '-', '.', '-', '-', '-', '-', '-', '.', '-', '-', '.', '-'],
         ['-', '.', '-', '.', '.', '-', '.', '.', '-', '.', '-', '.', 'M', '.', '-', '.', '.', '.', '.', '.', '.', '.', '-', '-', '.', '-'],
         ['-', '.', '-', '.', '-', '-', '-', '.', '-', '.', '-', '-', '-', '.', '-', '.', '-', '-', '.', '-', '-', '.', '-', '-', '.', '-'],
@@ -164,11 +166,7 @@ function newGame(){
         ['-', 'M', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '-', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '-'],
         ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-',  '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-','-', '-', '-', '-'],
 
-        // ['-', '-','-', '-'],
-        // ['-','M', '.','.', '-'],
-        // ['-','.', '-','.', '-'],
-        // ['-','C', '.','.', '-'],
-        // ['-', '-', '-','-',],
+
     ]
 
     const pellets = []
@@ -346,25 +344,25 @@ function newGame(){
 
     function perdeuTela(){
 
-        window.open("gameOver.html")//aki vai linka pra outra tela
+        window.location.href="gameOver.html"
         clearInterval(tempoInterval)
     }
 
     let scoreR = pellets.length
     let scoreB = pellets.length + 50
-    let scoreM = pellets.length + 80
+    let scoreM = pellets.length + 90
 
     function ganhouTela(tempo){
         clearInterval(tempoInterval)
         c.clearRect(0,0,canvas.width, canvas.height)
-        if(score>=scoreM && vidas==3 && tempo <= 40) {
-            window.open("MB.html")
+        if(score>=scoreM && vidas==3 && tempo <= 41) {
+            window.location.href="MB.html"
         }
-        else if(score>=scoreB && vidas>=2 &&tempo <= 60)  {
-            window.open("B.html")
+        else if(score>=scoreB && vidas>=2 &&tempo <= 80)  {
+            window.location.href="B.html"
         }
         else if(score>=scoreR)  {
-            window.open("R.html")
+            window.location.href="R.html"
         }else{}
     }
 
@@ -382,10 +380,11 @@ function newGame(){
 
     let animationId
 
-    function animate (){
 
+    var MudarFundo = false
+    function animate (){
         animationId = requestAnimationFrame(animate)
-        if(keys.w.pressed && lastKey === 'w'){
+        if(keys.w.pressed){
             for(let i = 0; i<boundaries.length; i++){
                 const boundary = boundaries[i]
                 if(circleCollidesWithRectanglePlayer({circle:{...player, velocity:{ x:0, y:-7}}, rectangle:boundary})){
@@ -396,7 +395,7 @@ function newGame(){
                 }
             }
 
-        } else if (keys.s.pressed && lastKey === 's'){
+        } else if (keys.s.pressed){
             for(let i = 0; i<boundaries.length; i++){
                 const boundary = boundaries[i]
                 if(circleCollidesWithRectanglePlayer({circle:{...player, velocity:{ x:0, y:7}}, rectangle:boundary})){
@@ -406,7 +405,7 @@ function newGame(){
                     player.velocity.y=5
                 }
             } 
-        }else if (keys.a.pressed && lastKey === 'a'){
+        }else if (keys.a.pressed){
             for(let i = 0; i<boundaries.length; i++){
                 const boundary = boundaries[i]
                 if(circleCollidesWithRectanglePlayer({circle:{...player, velocity:{ x:-7, y:0}}, rectangle:boundary})){
@@ -417,7 +416,7 @@ function newGame(){
                     player.image.src = 'imgs/player2.png'
                 }
             }
-        }else if (keys.d.pressed && lastKey === 'd'){
+        }else if (keys.d.pressed){
             for(let i = 0; i<boundaries.length; i++){
                 const boundary = boundaries[i]
                 if(circleCollidesWithRectanglePlayer({circle:{...player, velocity:{ x:7, y:0}}, rectangle:boundary})){
@@ -431,6 +430,13 @@ function newGame(){
         }
         else{}
         
+        if(MudarFundo==false){
+            canvas.style.backgroundColor='black'
+        }
+        else{
+            canvas.style.backgroundColor='red'
+        }
+
         c.clearRect(0,0,canvas.width, canvas.height)
 
         for (let i = pellets.length -1; 0 <= i; i--){//45
@@ -460,10 +466,13 @@ function newGame(){
 
                 ghost.forEach(ghost =>{
                     ghost.scared = true 
+                    MudarFundo = true
                     setTimeout(()=>{
                         ghost.scared = false 
+                        MudarFundo = false
                     }, 6000)
                 })
+                
             }
             
         }
@@ -494,23 +503,22 @@ function newGame(){
         
         ghost.forEach(ghost=>{
             ghost.update()
-            console.log(ghost.idGhost)
+
 
             if (Math.hypot(ghost.position.x - player.position.x,ghost.position.y - player.position.y) <ghost.radius + player.radius)
             {
                 if(ghost.scared==false && ghost.dead==false){
-                    if(vidas == 9){
+                    if(vidas ==1){
                         cancelAnimationFrame(animationId)
                         perdeuTela()
                         clearInterval(tempoInterval)
                     }else{
                         tpGhosts()
-                        console.log("PERDEU VIDA MLK")
-                        //vidas -= 1
-                        //player.velocity.x = 0
-                        //player.velocity.y = 0
-                        //player.position.x = Boundary.height + Boundary.height / 2,
-                        //player.position.y = Boundary.height + Boundary.height / 2,
+                        vidas -= 1
+                        player.velocity.x = 0
+                        player.velocity.y = 0
+                        player.position.x = Boundary.height + Boundary.height / 2,
+                        player.position.y = Boundary.height + Boundary.height / 2,
                         
                         vidaEl.innerHTML = vidas
                     }
@@ -571,17 +579,17 @@ function newGame(){
                         ghost.velocity.y = Ghost.speed
                         ghost.velocity.x = 0
                         if(ghost.idGhost==1){
-                            if(ghost.scared==true) ghost.image.src = 'imgs/ghostScared2.png'
+                            if(ghost.scared==true) ghost.image.src = 'imgs/ghostScared1E.png'
                             else ghost.image.src = 'imgs/ghost1E.png'
                         }else if(ghost.idGhost ==2){
-                            if(ghost.scared==true) ghost.image.src = 'imgs/ghostScared2.png'
+                            if(ghost.scared==true) ghost.image.src = 'imgs/ghostScared2E.png'
                             else ghost.image.src = 'imgs/ghost2E.png'
                         }else if(ghost.idGhost ==3){
-                            if(ghost.scared==true) ghost.image.src = 'imgs/ghostScared2.png'
-                            else ghost.image.src = 'imgs/ghost2E.png'
+                            if(ghost.scared==true) ghost.image.src = 'imgs/ghostScared3E.png'
+                            else ghost.image.src = 'imgs/ghost3E.png'
                         }else if(ghost.idGhost ==4){
-                            if(ghost.scared==true) ghost.image.src = 'imgs/ghostScared2.png'
-                            else ghost.image.src = 'imgs/ghost2E.png'
+                            if(ghost.scared==true) ghost.image.src = 'imgs/ghostScared4E.png'
+                            else ghost.image.src = 'imgs/ghost4E.png'
                         }
                         
                     break
@@ -590,17 +598,17 @@ function newGame(){
                         ghost.velocity.y = -Ghost.speed
                         ghost.velocity.x = 0
                         if(ghost.idGhost==1){
-                            if(ghost.scared==true) ghost.image.src = 'imgs/ghostScared2.png'
+                            if(ghost.scared==true) ghost.image.src = 'imgs/ghostScared1D.png'
                             else ghost.image.src = 'imgs/ghost1D.png'
                         }else if(ghost.idGhost ==2){
-                            if(ghost.scared==true) ghost.image.src = 'imgs/ghostScared2.png'
+                            if(ghost.scared==true) ghost.image.src = 'imgs/ghostScared2D.png'
                             else ghost.image.src = 'imgs/ghost2D.png'
                         }else if(ghost.idGhost ==3){
-                            if(ghost.scared==true) ghost.image.src = 'imgs/ghostScared2.png'
-                            else ghost.image.src = 'imgs/ghost2D.png'
+                            if(ghost.scared==true) ghost.image.src = 'imgs/ghostScared3D.png'
+                            else ghost.image.src = 'imgs/ghost3D.png'
                         }else if(ghost.idGhost ==4){
-                            if(ghost.scared==true) ghost.image.src = 'imgs/ghostScared2.png'
-                            else ghost.image.src = 'imgs/ghost2D.png'
+                            if(ghost.scared==true) ghost.image.src = 'imgs/ghostScared4D.png'
+                            else ghost.image.src = 'imgs/ghost4D.png'
                         }
                     break
 
@@ -608,17 +616,17 @@ function newGame(){
                         ghost.velocity.y = 0
                         ghost.velocity.x = Ghost.speed
                         if(ghost.idGhost==1){
-                            if(ghost.scared==true) ghost.image.src = 'imgs/ghostScared2.png'
+                            if(ghost.scared==true) ghost.image.src = 'imgs/ghostScared1D.png'
                             else ghost.image.src = 'imgs/ghost1D.png'
                         }else if(ghost.idGhost ==2){
-                            if(ghost.scared==true) ghost.image.src = 'imgs/ghostScared2.png'
+                            if(ghost.scared==true) ghost.image.src = 'imgs/ghostScared2D.png'
                             else ghost.image.src = 'imgs/ghost2D.png'
                         }else if(ghost.idGhost ==3){
-                            if(ghost.scared==true) ghost.image.src = 'imgs/ghostScared2.png'
-                            else ghost.image.src = 'imgs/ghost2D.png'
+                            if(ghost.scared==true) ghost.image.src = 'imgs/ghostScared3D.png'
+                            else ghost.image.src = 'imgs/ghost3D.png'
                         }else if(ghost.idGhost ==4){
-                            if(ghost.scared==true) ghost.image.src = 'imgs/ghostScared2.png'
-                            else ghost.image.src = 'imgs/ghost2D.png'
+                            if(ghost.scared==true) ghost.image.src = 'imgs/ghostScared4D.png'
+                            else ghost.image.src = 'imgs/ghost4D.png'
                         }
                     break
 
@@ -626,17 +634,17 @@ function newGame(){
                         ghost.velocity.y = 0
                         ghost.velocity.x = -Ghost.speed
                         if(ghost.idGhost==1){
-                            if(ghost.scared==true) ghost.image.src = 'imgs/ghostScared2.png'
+                            if(ghost.scared==true) ghost.image.src = 'imgs/ghostScared1E.png'
                             else ghost.image.src = 'imgs/ghost1E.png'
                         }else if(ghost.idGhost ==2){
-                            if(ghost.scared==true) ghost.image.src = 'imgs/ghostScared2.png'
+                            if(ghost.scared==true) ghost.image.src = 'imgs/ghostScared2E.png'
                             else ghost.image.src = 'imgs/ghost2E.png'
                         }else if(ghost.idGhost ==3){
-                            if(ghost.scared==true) ghost.image.src = 'imgs/ghostScared2.png'
-                            else ghost.image.src = 'imgs/ghost2E.png'
+                            if(ghost.scared==true) ghost.image.src = 'imgs/ghostScared3E.png'
+                            else ghost.image.src = 'imgs/ghost3E.png'
                         }else if(ghost.idGhost ==4){
-                            if(ghost.scared==true) ghost.image.src = 'imgs/ghostScared2.png'
-                            else ghost.image.src = 'imgs/ghost2E.png'
+                            if(ghost.scared==true) ghost.image.src = 'imgs/ghostScared4E.png'
+                            else ghost.image.src = 'imgs/ghost4E.png'
                         }
                     break
                 }
@@ -644,27 +652,27 @@ function newGame(){
             }
         })
 
-        scoreEl.innerHTML = score
     }
     animate()
 
 
     let lastKey = ''
     addEventListener('keydown', ({ key }) => {
+        console.log(key)
         switch (key) {
-        case 'w':
+        case 'ArrowUp':
             keys.w.pressed = true
             lastKey = 'w'
             break
-        case 'a':
+        case 'ArrowLeft':
             keys.a.pressed = true
             lastKey = 'a'
             break
-        case 's':
+        case 'ArrowDown':
             keys.s.pressed = true
             lastKey = 's'
             break
-        case 'd':
+        case 'ArrowRight':
             keys.d.pressed = true
             lastKey = 'd'
             break
@@ -673,21 +681,26 @@ function newGame(){
 
     addEventListener('keyup', ({key}) => {
         switch(key){
-            case 'w':
+            case 'ArrowUp':
                 keys.w.pressed = false
                 break
-            case 'a':
+            case 'ArrowLeft':
                 keys.a.pressed = false
                 break
-            case 's':
+            case 'ArrowDown':
                 keys.s.pressed = false
                 break
-            case 'd':
+            case 'ArrowRight':
                 keys.d.pressed = false
                 break
         }
     })
 }
+newGame()
+
+
+let musica = document.getElementById("musica");
+musica.play();
 
 function GameWinTelaTeste(){
     animationId = requestAnimationFrame(animate)

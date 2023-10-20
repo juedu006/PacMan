@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./imgs/james.png">
+    <title>Pacman</title>
+</head>
+<body>
+    <audio id="musica" src="music/musica.mp3" loop="true" autostart="true" type="embed/mp3"></audio>
+    <div id="wrapper">
+        <!-- <button onclick="newGame()">Novo Jogo</button> -->
+        <canvas id="canvas"></canvas>
+    </div>
+    
+    <div id ="informacao">
+        <div class="containerPontos">
+            <p id="score">
+                <span>Pontos Adquiridos: </span><span id="scoreEl">0</span>
+            </p>
+        </div>
+        <div class="containerVida">
+            <p id="vidas">
+                <span>Vidas Restantes: </span><span id="vidaEl">3</span>
+            </p>
+        </div>
+        <div class="containerTempo">
+            <p id="timer">
+                <span>Tempo: </span><span id="tempoEl">0</span><span>s</span>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+<script src="index.js"></script>

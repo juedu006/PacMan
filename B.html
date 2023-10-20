@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B</title>
+    <link rel="stylesheet" href="./CSS/estilo.css">
+    <link rel="icon" href="./imgs/james.png">
+    <title>Resultado</title>
 </head>
 <body>
-    
-    <div id="wrapper">
-        <h1> B </h1>
-        <button onclick="pagIni()">Novo Jogo</button>
-        <canvas id="canvas"></canvas>
-        <p id="scoreF">
-            <span>Seu score: </span><span id="scoreFin"></span>
-        </p>
-        <p id="timerF">
-            <span>Tempo: </span><span id="tempoFin">0</span><span>s</span>
-        </p>
+    <div class="grandContainerResultado">
+        <div class="containerResultado">
+            <div class="containerGameOver">
+                <span class="txtGameOver">Game Win!!</span>
+            </div>
+            <div class="notaFinal">
+                <h3>Nota Final</h3>
+            </div>
+            <div class="nota">
+                <p class="txtNota">B</p>
+            </div>
+            <div class="botoesResultado">
+                <div class="containerBotaoResultado1">
+                    <a href="./index.html"><button type="button" class="botaoInicio">Inicio</button></a>
+                </div>
+                <div class="containerBotaoResultado2">
+                    <a href="./final.html"><button type="button" class="botaoJogarNovamente">Jogar <br> Novamente</button></a>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
-<script>
-        function pagIni(){
-            window.open("introducaoJogo.html")
-        }
-    const scoreEl = document.querySelector('#scoreFin')
-    const tempoEl = document.querySelector('#tempoFin')
-    tempoEl.innerHTML = tempo
-</script>
 </html>
-<script src="index.js"></script>

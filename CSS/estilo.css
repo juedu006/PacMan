@@ -1,0 +1,322 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#grandContainer {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)), url(../imgs/image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#james {
+    width: 35vw;
+    height: 75vh;
+    transition: transform 0.3s;
+    margin-top: 1.6em;
+}
+
+#james:hover {
+    transform: scale(1.1); 
+}
+
+.nomeJames{
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #fff;
+    margin-left: 30px;
+    margin-top: 40px;
+}
+
+#imgJames:hover #james {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+#imgJames:hover .nomeJames {
+    opacity: 1;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#text{
+    width: 40vw;
+    height: 18vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: 9px dashed rgb(243, 235, 3);
+    margin-left: 20px;
+}
+
+#txtTitle{
+    font-size: 100px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #fff;
+}
+
+#botao{
+    width: 15vw;
+    height: 10vh;
+    background-color: rgba(191, 185, 0, 0.988);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #fff;
+}
+
+#botao:hover {
+    transition: 0.5s ease-in;
+    background-color: transparent;
+    border: 2px solid #fff;
+}
+
+#grandContainerExplicacao {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url(../imgs/image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#containerExplicacao{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    padding-top: 1em;
+}
+
+#professores {
+    width: 65vw;
+    height: 70vh;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 4em;   
+}
+
+.imgProfessores {
+    width: 130%;
+    height: 45vh;
+    transition: transform 0.3s;
+}
+
+.imgProf1, .imgProf2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
+    position: relative;
+}
+
+.imgProf2 {
+    margin-top: 3em;
+}
+
+.nomeProfessores1, .nomeProfessores2, .nomeProfessores3, .nomeProfessores4 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;   
+    font-size: 25px;
+    color: #fff;
+    opacity: 0; 
+    transition: opacity 0.3s;
+}
+
+.nomeProfessores2 {
+    margin-left: 5px;
+    margin-bottom: 30px;
+}
+
+.nomeProfessores1 {
+    margin-top: 23px;
+    margin-left: 14px;
+}
+.nomeProfessores3 {
+    margin-left: 60px;
+}
+
+.nomeProfessores4{
+    margin-bottom: 20px;
+}
+
+.imgProf1:hover .imgProfessores,
+.imgProf2:hover .imgProfessores {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.imgProf1:hover .nomeProfessores1,
+.imgProf2:hover .nomeProfessores2,
+.imgProf1:hover .nomeProfessores3,
+.imgProf2:hover .nomeProfessores4{
+    opacity: 1; 
+}
+
+
+#lor{
+    width: 35vw;
+    height: 70vh;
+    flex-direction: column; 
+    justify-content: space-between;
+}
+
+h2{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 45px;
+    color: #fff;
+}
+
+#historiaDoJogo{
+    width: 90%;
+    height: 85%;
+    background-color: rgba(0, 0, 0, 0.514);
+    margin-top: 15px;
+    border-radius: 15px;
+    border: 9px dashed rgb(243, 235, 3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#txtLor{
+    color: #fff;
+    font-size: 16px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+.containerExplicacao{
+    margin-left: 23em;
+}
+
+#botaoExplicacao{
+    width: 15vw;
+    height: 10vh;
+    background-color: rgba(191, 185, 0, 0.988);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #fff;
+}
+
+#botaoExplicacao:hover {
+    transition: 0.5s ease-in;
+    background-color: transparent;
+    border: 2px solid #fff;
+}
+
+.grandContainerResultado {
+    height: 100vh; 
+    background-color: rgb(55, 55, 55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url(../imgs/image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.txtGameOver{
+    font-size: 100px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #fff;
+}
+
+.containerGameOver{
+    width: 40vw;
+    height: 18vh;
+    border-radius: 20px;
+    border: 9px dashed rgb(243, 235, 3);
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h3{
+    font-size: 35px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(243, 235, 3);
+    margin-top: 2em;
+}
+
+.txtNota{
+    font-size: 150px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(255, 255, 255);
+}
+
+.containerResultado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; 
+}
+
+.botoesResultado{
+    width: 100%;
+    height: 6em;
+    display: flex;
+    justify-content: center;
+    margin-top: 4em;
+}
+
+.containerBotaoResultado2{
+    margin-left: 10em;
+}
+
+.botaoInicio{
+    width: 15vw;
+    height: 10vh;
+    background-color: rgba(191, 185, 0, 0.988);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #fff;
+}
+
+.botaoInicio:hover {
+    transition: 0.5s ease-in;
+    background-color: transparent;
+    border: 2px solid #fff;
+}
+
+.botaoJogarNovamente{
+    width: 15vw;
+    height: 10vh;
+    background-color: rgba(191, 185, 0, 0.988);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #fff;
+}
+
+.botaoJogarNovamente:hover {
+    transition: 0.5s ease-in;
+    background-color: transparent;
+    border: 2px solid #fff;
+}

@@ -1,26 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pacman</title>
+    <link rel="stylesheet" href="./CSS/estilo.css">
+    <link rel="icon" href="./imgs/james.png">
+    <title>Home</title>
 </head>
 <body>
-    
-    <div id="wrapper">
-        <button onclick="newGame()">Novo Jogo</button>
-        <canvas id="canvas"></canvas>
-        <p id="score" class="conteudo">
-            <span>Bolinhas Comidas: </span><span id="scoreEl">0</span>
-        </p>
-        <p id="vidas">
-            <span>Vidas Restantes: </span><span id="vidaEl">3</span>
-        </p>
-        <p id="timer">
-            <span>Tempo: </span><span id="tempoEl">0</span><span>s</span>
-        </p>
+    <div id="grandContainer">
+        <div id="content">
+            <div id="text">
+                <span id="txtTitle">Rumo ao R</span>
+            </div>
+            <div id="imgJames">
+                <p class="nomeJames">James</p>
+                <img id="james" src="./imgs/james.png" alt="">
+            </div>
+        </div>
+        <div class="container">
+            <a href="./explicacao.html"><button type="button" id="botao">Começar</button></a>
+        </div>
     </div>
 </body>
 </html>
-<script src="index.js"></script>

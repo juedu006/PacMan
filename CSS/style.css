@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0;
+    background-color: black;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+
+#wrapper{
+    height: 100%;
+    width: 90%;
+    border: 3px dashed yellow;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1.5%;
+    padding:1.5%;
+    border-radius: 10px;
+    background-color: rgba(255, 153, 0, 0.808);
+}
+#informacao{
+    display: flex;
+    width: 90%;
+    margin-top: 2%;
+}
+
+#score, #vidas, #timer{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:#ffffff;
+    float: right;
+    font-weight: bold;
+}
+
+#canvas{
+    border: 6px dashed yellow;
+    border-radius: 10px;
+    margin: 1% 0% 1% 0%;  
+}
+
+.containerPontos, .containerVida, .containerTempo {
+    width: 200px;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px dashed rgb(243, 235, 3);
+    border-radius: 10px;
+}
+
+.containerVida, .containerTempo{
+    margin-left: 25em;
+}
